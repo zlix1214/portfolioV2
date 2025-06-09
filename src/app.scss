@@ -1,5 +1,5 @@
 html {
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
 }
 
@@ -16,6 +16,8 @@ a {
 }
 
 body {
+  min-width: 360px;
+  overflow-x: auto;
   background-color: #0c0c1d;
   color: lightgray;
 }
@@ -25,18 +27,20 @@ section {
   scroll-snap-align: center;
 }
 
-@mixin mobile{
+@mixin mobile {
   @media (max-width: 768px) {
     @content;
   }
 }
-  @mixin tablet{
-  @media (max-width: 1024px) {
+
+@mixin tablet {
+  @media (min-width: 769px) and (max-width: 1024px) {
     @content;
   }
 }
-  @mixin desktop{
-  @media (max-width: 1366px) {
+
+@mixin desktop {
+  @media (min-width: 1025px) and (max-width: 1366px) {
     @content;
   }
 }
