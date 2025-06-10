@@ -2,6 +2,7 @@ import "./contact.scss";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const variants = {
   initial: {
@@ -49,18 +50,33 @@ const Contact = () => {
       whileInView="animate"
     >
       <motion.div variants={variants} className="textContainer">
-        <motion.h1 variants={variants}>Let's work together</motion.h1>
+        <motion.h1 variants={variants}>Happy to Connect</motion.h1>
         <motion.div variants={variants} className="item">
           <h2>Mail</h2>
-          <span>hello@email.com</span>
+          <span>rraefelix@gmail.com</span>
         </motion.div>
-        <div variants={variants} className="item">
-          <h2>Address</h2>
-          <span>hello street New York</span>
-        </div>
+
         <div variants={variants} className="item">
           <h2>Phone</h2>
-          <span>+1 234 5678</span>
+          <span>+886 0963 061 131</span>
+        </div>
+        <div className="social">
+          <a
+            href="https://github.com/zlix1214"
+            aria-label="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub size={24} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/%E7%A5%A5%E4%BD%91-%E9%84%AD-430778225/"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin size={24} />
+          </a>
         </div>
       </motion.div>
       <div className="formContainer">
@@ -71,38 +87,6 @@ const Contact = () => {
           transition={{ delay: 3, duration: 1 }}
           ref={ref}
         >
-          {/* <svg
-            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1"
-            id="Layer_1"
-            viewBox="0 0 64 38"
-            enable-background="new 0 0 64 38"
-            xml:space="preserve"
-          >
-            <title>Paper-plane</title>
-            <desc>Created with Sketch.</desc>
-            <g id="Page-1" sketch:type="MSPage">
-              <g
-                id="Paper-plane"
-                transform="translate(1.000000, 2.000000)"
-                sketch:type="MSLayerGroup"
-              >
-                <motion.path
-                  id="Shape"
-                  sketch:type="MSShapeGroup"
-                  fill="none"
-                  stroke-width="2"
-                  stroke-linejoin="round"
-                  initial={{ pathLength: 0 }}
-                  animate={isInView && { pathLength: 1 }}
-                  transition={{ duration: 3 }}
-                  d="M27,22.2    l-4.8,10.012l8.391-7.115L22.2,32.212V20.4L61.375,1.125L22.2,20.4l-21-1.9c-0.9-0.3-1.4-1.3-1.1-2.3L60.8,0    c0.9,0.3,1.4,1.3,1.1,2.3L43.8,32.8c-0.3,0.9-1.3,1.4-2.3,1.1L27,22.2L61.375,1.125L27,22.2z"
-                />
-              </g>
-            </g>
-          </svg> */}
           <svg id="Layer_1" viewBox="0 0 64 38">
             <motion.path
               id="Shape"
@@ -122,7 +106,7 @@ const Contact = () => {
           ref={formRef}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 4, duration: 1 }}
+          transition={{ delay: 3.5, duration: 0.5 }}
         >
           <input type="text" placeholder="Name" name="name" required />
           <input type="email" placeholder="Email" name="email" required />

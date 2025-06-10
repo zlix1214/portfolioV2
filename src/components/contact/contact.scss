@@ -37,6 +37,10 @@
     span {
       font-weight: 300;
     }
+    .social {
+      display: flex;
+      gap: 20px;
+    }
   }
   .formContainer {
     flex: 1;
@@ -46,7 +50,7 @@
       width: 100%;
     }
     .airplaneSvg {
-      stroke: orange;
+      stroke: rgba(255, 255, 255, 0.697);
       position: absolute;
       top: 50%;
       left: 50%;
@@ -73,17 +77,24 @@
         background-color: transparent;
         border: 1px solid white;
         color: white;
-        border-radius: 5px;
         @include mobile {
           padding: 10px;
         }
       }
       button {
         padding: 20px;
-        background-color: orange;
-        border: none;
+        background-color: transparent;
+        border: 1px solid white;
         cursor: pointer;
         font-weight: 500;
+        color: white;
+
+        &:hover {
+          background-color: white;
+          color: black;
+          transition: 0.3s ease-in-out;
+        }
+
         @include mobile {
           padding: 10px;
         }

@@ -1,5 +1,6 @@
 import "./navbar.scss";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import Sidebar from "../sidebar/Sidebar";
 const Navbar = () => {
@@ -13,20 +14,24 @@ const Navbar = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          Felix
+          <img src="/felixLogo.png" alt="" />
         </motion.span>
         <div className="social">
-          <a href="#">
-            <img src="/facebook.png" alt="" />
+          <a
+            href="https://github.com/zlix1214"
+            aria-label="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub size={24} />
           </a>
-          <a href="#">
-            <img src="/instagram.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="/youtube.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="/dribbble.png" alt="" />
+          <a
+            href="https://www.linkedin.com/in/%E7%A5%A5%E4%BD%91-%E9%84%AD-430778225/"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin size={24} />
           </a>
         </div>
       </div>

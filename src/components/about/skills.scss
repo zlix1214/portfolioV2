@@ -1,0 +1,15 @@
+.skills {
+  padding-bottom: 6rem;
+
+  .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    .icon {
+      padding: 1rem;
+      border-radius: 1rem;
+    }
+  }
+}

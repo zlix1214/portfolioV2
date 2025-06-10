@@ -5,27 +5,22 @@ import { useRef } from "react";
 const items = [
   {
     id: 1,
-    title: "Project One",
-    img: "https://plus.unsplash.com/premium_photo-1749200412765-8164987075aa?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolorem enim vel ab, eaque minus officiis illum at deleniti, nihil ad. Dicta, impedit tempora vel mollitia adipisci accusamus laborum dolores.",
+    title: "Fiorvo - fashion eCommerce",
+    img: "./p1-ecommerce.png",
+    demo: "https://fiorvo-frontend.vercel.app/",
+    github: "https://github.com/zlix1214/eCommerce?tab=readme-ov-file",
+    desc: "Fiorvo is a fashion e-commerce site built with the MERN stack, featuring a customer storefront and an admin dashboard for managing products, orders, and shipping.",
+    desc2: "",
   },
   {
     id: 2,
-    title: "Project Two",
-    img: "https://images.unsplash.com/photo-1746091066530-4a7c0319df8b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMDd8fHxlbnwwfHx8fHw%3D",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolorem enim vel ab, eaque minus officiis illum at deleniti, nihil ad. Dicta, impedit tempora vel mollitia adipisci accusamus laborum dolores.",
-  },
-  {
-    id: 3,
-    title: "Project Three",
-    img: "https://images.unsplash.com/photo-1749223062893-0c583c9b8806?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzOHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolorem enim vel ab, eaque minus officiis illum at deleniti, nihil ad. Dicta, impedit tempora vel mollitia adipisci accusamus laborum dolores.",
-  },
-  {
-    id: 4,
-    title: "Project Four",
-    img: "https://images.unsplash.com/photo-1747672906209-a289d77252a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0OHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolorem enim vel ab, eaque minus officiis illum at deleniti, nihil ad. Dicta, impedit tempora vel mollitia adipisci accusamus laborum dolores.",
+    title: "Real-time Chat App",
+    img: "./p2-chat.png",
+    demo: "https://realtimechatapp-acaa.onrender.com/login",
+    github: "https://github.com/zlix1214/RealTimeChatApp",
+    desc: "A real-time chat app built with the MERN stack and Socket.IO, featuring multi-theme support and seamless live messaging between users.",
+    desc2:
+      "⚠️ Note: This app is deployed on Render's free plan, so the server may take around 30 seconds to wake up on the first login due to server cold start. Please be patient during this initial loading time.",
   },
 ];
 
@@ -47,7 +42,15 @@ const Single = ({ item }) => {
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <button>See Demo</button>
+            {item.desc2 && <p>{item.desc2}</p>}
+            <div className="buttons">
+              <a href={item.demo} target="_blank" rel="noopener noreferrer">
+                See Demo
+              </a>
+              <a href={item.github} target="_blank" rel="noopener noreferrer">
+                Github repo
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -70,7 +73,6 @@ const Portfolio = () => {
   return (
     <div className="portfolio" ref={ref}>
       <div className="progress">
-        <h1>Feature Works</h1>
         <motion.div style={{ scaleX }} className="progressBar"></motion.div>
       </div>
       {items.map((item) => (

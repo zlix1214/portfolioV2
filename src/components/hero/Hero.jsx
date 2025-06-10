@@ -52,9 +52,11 @@ const Hero = () => {
           <motion.h1 variants={textVariants}>Web Developer</motion.h1>
           <motion.div className="buttons" variants={textVariants}>
             <motion.button variants={textVariants}>
-              See the latest work
+              <a href="#Portfolio">See the latest work</a>
             </motion.button>
-            <motion.button variants={textVariants}>Contact me</motion.button>
+            <motion.button variants={textVariants}>
+              <a href="#Contact">Contact me</a>
+            </motion.button>
           </motion.div>
           <motion.img
             src="/scroll.png"
@@ -70,10 +72,10 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Writer Content Creator Influencer
+        Patience.Consistent.Learning
       </motion.div>
       <div className="imageContainer">
-        <img src="/hero.png" alt="" />
+        <img src="/felixProfile.png" alt="" />
       </div>
     </div>
   );

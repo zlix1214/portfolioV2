@@ -12,6 +12,7 @@
   h1 {
     font-size: 100px;
 
+    z-index: 3;
     @include mobile {
       font-size: 72px;
       text-align: center;
@@ -19,13 +20,13 @@
   }
 
   .mountains {
-    background-image: url("/mountains.png");
+    background-image: url("/mount.png");
     background-size: cover;
     background-position: bottom;
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 3;
+    z-index: 4;
 
     @include mobile {
       background-size: contain;
@@ -39,18 +40,23 @@
     height: 100%;
     position: absolute;
     z-index: 2;
+
     @include mobile {
       background-size: contain;
       background-repeat: no-repeat;
+      background-position: center; // 讓圖片置中
+      display: flex; // 讓內容可用 flex 置中
+      align-items: center; // 垂直置中
+      justify-content: center; // 水平置中
     }
   }
   .stars {
-    background-image: url("/stars.png");
+    background-image: url("/starSky.png");
     background-size: cover;
     background-position: bottom;
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
   }
 }
