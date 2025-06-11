@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Banner from "../banner/Banner";
 
 const variants = {
   initial: {
@@ -50,7 +51,8 @@ const Contact = () => {
       whileInView="animate"
     >
       <motion.div variants={variants} className="textContainer">
-        <motion.h1 variants={variants}>Happy to Connect</motion.h1>
+        {/* <motion.h1 variants={variants}>Happy to Connect</motion.h1> */}
+        <Banner />
         <motion.div variants={variants} className="item">
           <h2>Mail</h2>
           <span>rraefelix@gmail.com</span>

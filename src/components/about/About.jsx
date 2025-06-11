@@ -62,6 +62,16 @@ const About = () => {
           <div className="photo-section">
             <div className="photo-wrapper">
               <img src="./about.png" alt="關於我" />
+              {/* 簽名印章 */}
+              <motion.div
+                className="signature-stamp"
+                initial={{ opacity: 0, scale: 0, rotate: 0 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: -15 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: "backOut" }}
+                viewport={{ once: true }}
+              >
+                <img src="./sign.png" alt="簽名" />
+              </motion.div>
             </div>
           </div>
 
