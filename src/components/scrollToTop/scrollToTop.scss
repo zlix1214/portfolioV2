@@ -1,0 +1,29 @@
+// components/ScrollToTopButton.module.scss
+
+.scrollToTop {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  padding: 0.75rem;
+  border-radius: 50%;
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.995);
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease;
+  }
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

@@ -1,0 +1,17 @@
+{
+  "navbar": {
+    "language": "切換語言"
+  },
+  "contact": {
+    "mail": "郵件",
+    "phone": "電話",
+    "success": "訊息發送成功！",
+    "error": "發送失敗，請重新嘗試。",
+    "form": {
+      "namePlaceholder": "姓名",
+      "emailPlaceholder": "電子郵件",
+      "messagePlaceholder": "訊息",
+      "submit": "發送"
+    }
+  }
+}

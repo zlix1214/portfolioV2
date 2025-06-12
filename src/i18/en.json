@@ -1,0 +1,17 @@
+{
+  "navbar": {
+    "language": "Switch Language"
+  },
+  "contact": {
+    "mail": "Mail",
+    "phone": "Phone",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again.",
+    "form": {
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "Email",
+      "messagePlaceholder": "Message",
+      "submit": "Submit"
+    }
+  }
+}

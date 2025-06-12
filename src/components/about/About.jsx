@@ -56,7 +56,7 @@ const About = () => {
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           {/* 照片區 */}
           <div className="photo-section">
@@ -102,7 +102,7 @@ const About = () => {
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           {/* 經歷區 */}
           <div className="experience-section">
@@ -146,7 +146,7 @@ const About = () => {
                   animate="animate"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <Icon style={{ fontSize: "2.5rem", color }} />
+                  <Icon style={{ fontSize: "2rem" }} />
                   <span className="skill-name">{name}</span>
                 </motion.div>
               ))}

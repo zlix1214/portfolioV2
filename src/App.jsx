@@ -6,6 +6,8 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Contact from "./components/contact/Contact";
 import Cursor from "./components/cursor/Cursor";
 import About from "./components/about/About";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import "./i18/i18n";
 
 const App = () => {
   return (
@@ -28,6 +30,7 @@ const App = () => {
       <section id="Contact">
         <Contact />
       </section>
+      <ScrollToTop />
     </div>
   );
 };

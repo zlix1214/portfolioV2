@@ -1,9 +1,13 @@
 import "./navbar.scss";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import "../../i18/i18n";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
 
 import Sidebar from "../sidebar/Sidebar";
 const Navbar = () => {
+  const { t } = useTranslation();
   return (
     <div className="navbar">
       {/* side bar */}
@@ -17,6 +21,7 @@ const Navbar = () => {
           <img src="/felixLogo.png" alt="" />
         </motion.span>
         <div className="social">
+          <LanguageSwitcher />
           <a
             href="https://github.com/zlix1214"
             aria-label="GitHub"
