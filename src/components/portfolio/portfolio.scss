@@ -2,8 +2,8 @@
 
 .portfolio {
   position: relative;
-  padding: 0 20px;
-  // height: auto;
+  padding: 20px;
+  height: auto;
 
   .progress {
     position: sticky;
@@ -30,7 +30,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    // height: fit-content;
+    height: 100%;
+    overflow-y: visible;
 
     .wrapper {
       max-width: 1366px;
@@ -40,7 +41,6 @@
       align-items: center;
       justify-content: center;
       gap: 50px;
-      overflow-y: visible;
 
       @include mobile {
         flex-direction: column;
@@ -78,7 +78,6 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
-        // height: fit-content;
 
         @include mobile {
           transform: none !important;

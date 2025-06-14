@@ -218,7 +218,7 @@ const Contact = () => {
         <motion.div variants={itemVariants} whileHover="hover" className="item">
           <h2>{t("contact.mail")}</h2>
           <motion.span
-            whileHover={{ color: "#ff6b6b" }}
+            whileHover={{ color: "yellow" }}
             transition={{ duration: 0.2 }}
           >
             rraefelix@gmail.com
@@ -228,7 +228,7 @@ const Contact = () => {
         <motion.div variants={itemVariants} whileHover="hover" className="item">
           <h2>{t("contact.phone")}</h2>
           <motion.span
-            whileHover={{ color: "#ff6b6b" }}
+            whileHover={{ color: "yellow" }}
             transition={{ duration: 0.2 }}
           >
             +886 0963 061 131
