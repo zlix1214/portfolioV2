@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import "./LanguageSwitcher.scss";
+import "./languageSwitcher.scss";
 import { MdGTranslate } from "react-icons/md";
 const LanguageSwitcher = () => {
   const { i18n, t } = useTranslation();
