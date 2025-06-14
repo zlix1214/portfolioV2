@@ -1,12 +1,10 @@
-import { motion } from "framer-motion";
-import { RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { TbBrandNextjs } from "react-icons/tb";
-import { SiMongodb, SiExpress } from "react-icons/si";
-import { FaNodeJs, FaFigma, FaGitAlt } from "react-icons/fa";
 import "./about.scss";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
+import { SiMongodb, SiExpress } from "react-icons/si";
+import { FaNodeJs, FaFigma, FaGitAlt } from "react-icons/fa";
 
-// icon 動畫 variants
 const iconVariants = (duration) => ({
   initial: { y: -10 },
   animate: {
@@ -20,7 +18,6 @@ const iconVariants = (duration) => ({
   },
 });
 
-// 技能陣列
 const skills = [
   { icon: RiReactjsLine, color: "#61DAFB", duration: 2.5, name: "React" },
   { icon: RiTailwindCssFill, color: "#38B2AC", duration: 3, name: "Tailwind" },
@@ -31,7 +28,6 @@ const skills = [
   { icon: FaFigma, color: "#F24E1E", duration: 2.5, name: "Figma" },
 ];
 
-// 經歷資料
 const experiences = [
   {
     period: "03.2025 – Present",
@@ -55,7 +51,7 @@ const About = () => {
   return (
     <section className="about-section">
       <div className="about-content">
-        {/* 第一區塊：個人介紹 */}
+        {/*personal-block*/}
         <motion.div
           className="about-block personal-block"
           initial={{ opacity: 0, x: -100 }}
@@ -63,11 +59,11 @@ const About = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
         >
-          {/* 照片區 */}
+          {/* photo */}
           <div className="photo-section">
             <div className="photo-wrapper">
-              <img src="./about.png" alt="關於我" />
-              {/* 簽名印章 */}
+              <img src="./about.png" alt="" />
+              {/* sign stamp */}
               <motion.div
                 className="signature-stamp"
                 initial={{ opacity: 0, scale: 0, rotate: 0 }}
@@ -75,12 +71,12 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.5, ease: "backOut" }}
                 viewport={{ once: true }}
               >
-                <img src="./sign.png" alt="簽名" />
+                <img src="./sign.png" alt="" />
               </motion.div>
             </div>
           </div>
 
-          {/* 自我介紹區 */}
+          {/* introduction */}
           <div className="intro-section">
             <h3>{t("about.intro1")}</h3>
             <p>{t("about.intro2")}</p>
@@ -89,7 +85,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* 第二區塊：經歷與技能 */}
+        {/* exp  & skills */}
         <motion.div
           className="about-block professional-block"
           initial={{ opacity: 0, x: 100 }}
@@ -97,7 +93,7 @@ const About = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
         >
-          {/* 經歷區 */}
+          {/* exp */}
           <div className="experience-section">
             <h3>{t("about.exp")}</h3>
             <div className="experience-list">
@@ -123,7 +119,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* 技能區 */}
+          {/* skill */}
           <div className="skills-section">
             <h3>{t("about.skills")}</h3>
             <motion.div
@@ -133,7 +129,7 @@ const About = () => {
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
-              {skills.map(({ icon: Icon, color, duration, name }, index) => (
+              {skills.map(({ icon: Icon, duration, name }, index) => (
                 <motion.div
                   key={index}
                   className="skill-item"

@@ -1,6 +1,8 @@
 html {
   scroll-snap-type: y proximity;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff #000000;
 }
 
 ::selection {

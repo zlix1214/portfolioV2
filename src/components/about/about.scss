@@ -1,23 +1,12 @@
 @import "../../app.scss";
 
 .about-section {
-  height: 100vh;
   padding: clamp(20px, 4vh, 60px) clamp(15px, 3vw, 20px);
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   height: auto;
-  // @include tablet {
-  //   height: auto;
-  //   min-height: 100vh;
-  //   overflow-y: visible;
-  // }
-  // @include mobile {
-  //   height: auto;
-  //   min-height: 100vh;
-  //   overflow-y: visible;
-  // }
 }
 
 .about-title {
@@ -79,22 +68,15 @@
     .photo-wrapper {
       width: clamp(180px, 30vw, 300px);
       height: clamp(180px, 30vw, 300px);
-      overflow: visible; // 改為visible讓簽名可以超出範圍
+      overflow: visible;
       border: 3px solid rgba(108, 99, 255, 0.2);
-      position: relative; // 為簽名印章定位
+      position: relative;
       user-select: none;
-
-      &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 0px 15px rgba(255, 255, 255, 0.844);
-        border-color: rgba(255, 255, 255, 0.4);
-        transition: all 0.3s ease;
-      }
 
       @include mobile {
         width: clamp(120px, 40vw, 200px);
         height: clamp(120px, 40vw, 200px);
-        overflow: visible; // 手機版也要讓簽名可以超出
+        overflow: visible;
       }
 
       img {
@@ -103,10 +85,9 @@
         object-fit: cover;
       }
 
-      // 簽名印章樣式
       .signature-stamp {
         position: absolute;
-        top: -200px; // 增加偏移讓簽名更明顯地超出圖片
+        top: -200px;
         left: -180px;
         width: clamp(270px, 52.5vw, 450px);
         height: clamp(270px, 52.5vw, 450px);
@@ -115,7 +96,7 @@
         filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.4));
 
         @include mobile {
-          width: clamp(90px, 22vw, 150px); // 手機版也增大
+          width: clamp(90px, 22vw, 150px);
           height: clamp(90px, 22vw, 150px);
           top: -30px;
           left: -30px;
@@ -127,14 +108,12 @@
           object-fit: contain;
         }
 
-        // hover 效果
         &:hover {
           transform: rotate(-15deg) scale(1.1) !important;
           filter: drop-shadow(6px 6px 16px rgba(0, 0, 0, 0.5));
           transition: all 0.3s ease;
         }
 
-        // 微妙的脈衝動畫
         &::after {
           content: "";
           position: absolute;
@@ -143,9 +122,9 @@
           transform: translate(-50%, -50%);
           width: 120%;
           height: 120%;
-          border: 2px solid rgba(255, 255, 255, 0.2);
+          border: 2px solid rgba(255, 255, 255, 0.529);
           border-radius: 50%;
-          animation: stamp-pulse 3s infinite;
+          animation: stamp-pulse 2s infinite;
           opacity: 0;
         }
       }
@@ -222,14 +201,12 @@
       }
 
       .period {
-        // flex-shrink: 0;
         display: flex;
         flex-direction: column;
-        font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+        font-size: 0.75rem;
         width: 100%;
         color: #dddddd;
         font-weight: 600;
-        // white-space: nowrap;
         gap: 5px;
         width: clamp(80px, 15vw, 120px);
         text-align: start;
@@ -244,14 +221,14 @@
         flex: 1;
 
         h4 {
-          font-size: clamp(1rem, 2.1vw, 1rem);
+          font-size: 1rem;
           color: rgb(200, 200, 20);
           margin-bottom: clamp(2px, 0.5vh, 4px);
           font-weight: 500;
         }
 
         p {
-          font-size: clamp(0.9rem, 1.9vw, 0.9rem);
+          font-size: 0.8rem;
           color: #cdcdcd;
           line-height: 1.4;
           margin: 0;
@@ -296,7 +273,7 @@
         padding: clamp(12px, 3vw, 18px);
         background: black;
         backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.721);
+        border: 2px solid rgba(255, 255, 255, 0.721);
         transition: all 0.3s ease;
         min-height: clamp(90px, 18vw, 120px);
         justify-content: center;
@@ -309,10 +286,11 @@
         }
 
         &:hover {
-          background: linear-gradient(0deg, rgb(254, 254, 255), rgb(0, 0, 0));
-          transform: translateY(-3px);
-          box-shadow: 0 0px 10px rgba(255, 255, 255, 0.844);
-          border-color: rgba(255, 255, 255, 0.4);
+          background: white;
+          svg {
+            color: black;
+          }
+
           .skill-name {
             color: #000;
           }
@@ -335,7 +313,7 @@
         }
 
         .skill-name {
-          font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+          font-size: 0.75rem;
           color: #e7e4e4;
           font-weight: 600;
           text-align: center;
@@ -351,7 +329,6 @@
   }
 }
 
-// 簽名印章的脈衝動畫
 @keyframes stamp-pulse {
   0% {
     opacity: 0;

@@ -20,3 +20,4 @@ module.exports = {
     ],
   },
 }
+// This ESLint configuration is set up for a React project using the latest ECMAScript features.

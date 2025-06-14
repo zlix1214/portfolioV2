@@ -4,7 +4,6 @@ import { initReactI18next } from 'react-i18next';
 import en from './en.json';
 import zh from './zh.json';
 
-// 從 localStorage 取得儲存的語言
 const savedLanguage = localStorage.getItem('language') || 'en';
 
 i18n
@@ -14,7 +13,7 @@ i18n
       en: { translation: en },
       zh: { translation: zh },
     },
-    lng: savedLanguage, // 使用儲存的語言
+    lng: savedLanguage, 
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
