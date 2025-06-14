@@ -5,8 +5,16 @@
   gap: 10px;
   width: 5rem;
   height: 30px;
-
   background: transparent;
   color: white;
   border: 1px solid white;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.293);
+    scale: 1.1;
+  }
 }

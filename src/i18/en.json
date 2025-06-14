@@ -13,7 +13,8 @@
       "emailPlaceholder": "Email",
       "messagePlaceholder": "Message",
       "submit": "Submit"
-    }
+    },
+     "isSubmit":"submiting..."
   },
   "hero":{
     "title": "Felix Zheng",

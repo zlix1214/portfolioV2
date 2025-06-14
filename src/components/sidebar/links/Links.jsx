@@ -39,7 +39,7 @@ const Links = () => {
       {items.map((item) => {
         return (
           <motion.a
-            href={`#${item}`}
+            href={`#${item.anchor}`}
             key={item}
             variants={itemVariants}
             whileHover={{ scale: 1.1 }}

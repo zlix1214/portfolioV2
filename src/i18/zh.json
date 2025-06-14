@@ -13,7 +13,8 @@
       "emailPlaceholder": "電子郵件",
       "messagePlaceholder": "訊息",
       "submit": "發送"
-    }
+    },
+    "isSubmit":"提交中..."
   },
   "hero": {
     "title": "鄭祥佑",

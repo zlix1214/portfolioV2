@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Banner from "../banner/Banner";
 import { useTranslation } from "react-i18next";
 
-const variants = {
+const containerVariants = {
   initial: {
     y: 500,
     opacity: 0,
@@ -21,116 +21,300 @@ const variants = {
   },
 };
 
+const textVariants = {
+  initial: {
+    x: -100,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const itemVariants = {
+  initial: {
+    y: 50,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
+
+const socialVariants = {
+  initial: {
+    scale: 0,
+    opacity: 0,
+  },
+  animate: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: "backOut",
+    },
+  },
+  hover: {
+    scale: 1.2,
+    rotate: 5,
+    transition: {
+      duration: 0.2,
+    },
+  },
+  tap: {
+    scale: 0.9,
+  },
+};
+
+const formVariants = {
+  initial: {
+    x: 100,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const inputVariants = {
+  initial: {
+    y: 30,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+    },
+  },
+  focus: {
+    scale: 1.02,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
+
+const buttonVariants = {
+  initial: {
+    scale: 0.8,
+    opacity: 0,
+  },
+  animate: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "backOut",
+    },
+  },
+  hover: {
+    scale: 1.05,
+    backgroundColor: "white",
+    boxShadow: "0 10px 25px rgba(255, 107, 107, 0.3)",
+    transition: {
+      duration: 0.3,
+    },
+  },
+  tap: {
+    scale: 0.95,
+  },
+};
+
+const titleVariants = {
+  initial: {
+    y: -50,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: "bounceOut",
+    },
+  },
+};
+
+const floatingVariants = {
+  animate: {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const Contact = () => {
   const ref = useRef();
   const formRef = useRef();
   const { t } = useTranslation();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const isInView = useInView(ref, { margin: "-100px" });
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    emailjs
-      .sendForm("service_m28mrm6", "template_w7vzoha", formRef.current, {
-        publicKey: "T6d7SBmBpCpsjIdZW",
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          alert(t("contact.success"));
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          alert(t("contact.error"));
+    try {
+      await emailjs.sendForm(
+        "service_m28mrm6",
+        "template_w7vzoha",
+        formRef.current,
+        {
+          publicKey: "T6d7SBmBpCpsjIdZW",
         }
       );
+      console.log("SUCCESS!");
+      alert(t("contact.success"));
+    } catch (error) {
+      console.log("FAILED...", error.text);
+      alert(t("contact.error"));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <motion.div
+      ref={ref}
       className="contact"
-      variants={variants}
+      variants={containerVariants}
       initial="initial"
       whileInView="animate"
+      viewport={{ once: true, margin: "-100px" }}
     >
-      <motion.div variants={variants} className="textContainer">
-        {/* <Banner /> */}
-        <h1>{t("contact.title")}</h1>
-        <motion.div variants={variants} className="item">
-          <h2>{t("contact.mail")}</h2>
-          <span>rraefelix@gmail.com</span>
+      <motion.div variants={textVariants} className="textContainer">
+        <motion.div variants={floatingVariants} animate="animate">
+          <motion.h1 variants={titleVariants}>{t("contact.title")}</motion.h1>
         </motion.div>
-        <div variants={variants} className="item">
+
+        <motion.div variants={itemVariants} whileHover="hover" className="item">
+          <h2>{t("contact.mail")}</h2>
+          <motion.span
+            whileHover={{ color: "#ff6b6b" }}
+            transition={{ duration: 0.2 }}
+          >
+            rraefelix@gmail.com
+          </motion.span>
+        </motion.div>
+
+        <motion.div variants={itemVariants} whileHover="hover" className="item">
           <h2>{t("contact.phone")}</h2>
-          <span>+886 0963 061 131</span>
-        </div>
-        <div className="social">
-          <a
+          <motion.span
+            whileHover={{ color: "#ff6b6b" }}
+            transition={{ duration: 0.2 }}
+          >
+            +886 0963 061 131
+          </motion.span>
+        </motion.div>
+
+        <motion.div className="social" variants={containerVariants}>
+          <motion.a
             href="https://github.com/zlix1214"
             aria-label="GitHub"
             target="_blank"
             rel="noopener noreferrer"
+            variants={socialVariants}
+            whileHover="hover"
+            whileTap="tap"
           >
             <FaGithub size={24} />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="https://www.linkedin.com/in/%E7%A5%A5%E4%BD%91-%E9%84%AD-430778225/"
             aria-label="LinkedIn"
             target="_blank"
             rel="noopener noreferrer"
+            variants={socialVariants}
+            whileHover="hover"
+            whileTap="tap"
           >
             <FaLinkedin size={24} />
-          </a>
-        </div>
-      </motion.div>
-      <div className="formContainer">
-        <motion.div
-          className="airplaneSvg"
-          initial={{ opacity: 1 }}
-          whileInView={{ opacity: 0 }}
-          transition={{ delay: 3, duration: 1 }}
-          ref={ref}
-        >
-          <svg id="Layer_1" viewBox="0 0 64 38">
-            <motion.path
-              id="Shape"
-              sketch:type="MSShapeGroup"
-              fill="none"
-              stroke-width="2"
-              stroke-linejoin="round"
-              initial={{ pathLength: 0 }}
-              animate={isInView && { pathLength: 1 }}
-              transition={{ duration: 3 }}
-              d="M27,22.2    l-4.8,10.012l8.391-7.115L22.2,32.212V20.4L61.375,1.125L22.2,20.4l-21-1.9c-0.9-0.3-1.4-1.3-1.1-2.3L60.8,0    c0.9,0.3,1.4,1.3,1.1,2.3L43.8,32.8c-0.3,0.9-1.3,1.4-2.3,1.1L27,22.2L61.375,1.125L27,22.2z"
-            />
-          </svg>
+          </motion.a>
         </motion.div>
+      </motion.div>
+
+      <div className="formContainer">
         <motion.form
           onSubmit={sendEmail}
           ref={formRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 3.5, duration: 0.5 }}
+          variants={formVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
         >
-          <input
+          <motion.input
             type="text"
             placeholder={t("contact.form.namePlaceholder")}
             name="name"
             required
+            variants={inputVariants}
+            whileFocus="focus"
           />
-          <input
+          <motion.input
             type="email"
             placeholder={t("contact.form.emailPlaceholder")}
             name="email"
             required
+            variants={inputVariants}
+            whileFocus="focus"
           />
-          <textarea
+          <motion.textarea
             placeholder={t("contact.form.messagePlaceholder")}
             rows={8}
             name="message"
+            variants={inputVariants}
+            whileFocus="focus"
           />
-          <button type="submit">{t("contact.form.submit")}</button>
+          <motion.button
+            type="submit"
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
+            disabled={isSubmitting}
+          >
+            <motion.span
+              animate={isSubmitting ? { rotate: 360 } : {}}
+              transition={
+                isSubmitting
+                  ? {
+                      duration: 1,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }
+                  : {}
+              }
+            >
+              {isSubmitting ? t("contact.isSubmit") : t("contact.form.submit")}
+            </motion.span>
+          </motion.button>
         </motion.form>
       </div>
     </motion.div>
