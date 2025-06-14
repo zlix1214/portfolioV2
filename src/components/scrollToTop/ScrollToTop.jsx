@@ -1,7 +1,6 @@
-// components/ScrollToTopButton.jsx
 import { useEffect, useState } from "react";
 import { FiChevronUp } from "react-icons/fi";
-import "./ScrollToTop.scss";
+import "./scrollToTop.scss";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
