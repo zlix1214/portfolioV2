@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const variants = {
   open: {
@@ -26,7 +27,13 @@ const itemVariants = {
 };
 
 const Links = () => {
-  const items = ["Homepage", "About", "Portfolio", "Contact"];
+  const { t } = useTranslation();
+  const items = [
+    { key: "homepage", anchor: "Homepage" },
+    { key: "about", anchor: "About" },
+    { key: "portfolio", anchor: "Portfolio" },
+    { key: "contact", anchor: "Contact" },
+  ];
   return (
     <motion.div className="links" variants={variants}>
       {items.map((item) => {
@@ -38,7 +45,7 @@ const Links = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            {item}
+            {t(`nav.${item.key}`)}
           </motion.a>
         );
       })}

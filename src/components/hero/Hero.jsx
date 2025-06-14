@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import "./hero.scss";
+import Banner from "../banner/Banner";
+import { useTranslation } from "react-i18next";
 
 const textVariants = {
   initial: {
@@ -39,6 +41,8 @@ const silderVariants = {
 };
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="hero">
       <div className="wrapper">
@@ -48,14 +52,19 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
-          <motion.h2 variants={textVariants}>Felix Zheng</motion.h2>
-          <motion.h1 variants={textVariants}>Web Developer</motion.h1>
+          <motion.h2 variants={textVariants}>{t("hero.title")}</motion.h2>
+          <motion.div className="bannerContainer" variants={textVariants}>
+            <h1 style={{ color: "yellow" }}>{`{ `}</h1>
+            <Banner message={["intoWebDev", "openMind", "steadyLearner"]} />
+            <h1 style={{ color: "yellow" }}>{` }`}</h1>
+          </motion.div>
+          {/* <motion.h1 variants={textVariants}>{`{ IntoWebDev }`}</motion.h1> */}
           <motion.div className="buttons" variants={textVariants}>
             <motion.button variants={textVariants}>
-              <a href="#Portfolio">See the latest work</a>
+              <a href="#Portfolio">{t("hero.projectButton")}</a>
             </motion.button>
             <motion.button variants={textVariants}>
-              <a href="#Contact">Contact me</a>
+              <a href="#Contact">{t("hero.contactButton")}</a>
             </motion.button>
           </motion.div>
           <motion.img

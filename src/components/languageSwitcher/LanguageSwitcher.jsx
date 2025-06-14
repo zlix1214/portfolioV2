@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
-
+import "./LanguageSwitcher.scss";
+import { MdGTranslate } from "react-icons/md";
 const LanguageSwitcher = () => {
   const { i18n, t } = useTranslation();
 
@@ -14,9 +15,10 @@ const LanguageSwitcher = () => {
     <button
       onClick={toggleLanguage}
       aria-label={t("navbar.language")}
-      className="language-switcher" // 你可以加入自己的 CSS class
+      className="switcher"
     >
-      {i18n.language === "en" ? "中文" : "English"}
+      {/* <MdGTranslate className="icon" /> */}
+      <p>{i18n.language === "en" ? "中文" : "English"}</p>
     </button>
   );
 };

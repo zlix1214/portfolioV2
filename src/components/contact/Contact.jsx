@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Banner from "../banner/Banner";
-import { useTranslation } from "react-i18next"; // 加入這行
+import { useTranslation } from "react-i18next";
 
 const variants = {
   initial: {
@@ -24,7 +24,7 @@ const variants = {
 const Contact = () => {
   const ref = useRef();
   const formRef = useRef();
-  const { t } = useTranslation(); // 加入這行
+  const { t } = useTranslation();
 
   const isInView = useInView(ref, { margin: "-100px" });
 
@@ -38,11 +38,11 @@ const Contact = () => {
       .then(
         () => {
           console.log("SUCCESS!");
-          alert(t("contact.success")); // 可選：加入成功訊息
+          alert(t("contact.success"));
         },
         (error) => {
           console.log("FAILED...", error.text);
-          alert(t("contact.error")); // 可選：加入錯誤訊息
+          alert(t("contact.error"));
         }
       );
   };
@@ -55,12 +55,12 @@ const Contact = () => {
       whileInView="animate"
     >
       <motion.div variants={variants} className="textContainer">
-        <Banner />
+        {/* <Banner /> */}
+        <h1>{t("contact.title")}</h1>
         <motion.div variants={variants} className="item">
           <h2>{t("contact.mail")}</h2>
           <span>rraefelix@gmail.com</span>
         </motion.div>
-
         <div variants={variants} className="item">
           <h2>{t("contact.phone")}</h2>
           <span>+886 0963 061 131</span>

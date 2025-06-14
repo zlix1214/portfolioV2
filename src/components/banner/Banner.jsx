@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./banner.scss";
 
-const toRotate = [
-  "Happy to Connect.",
-  "That's get in touch!",
-  "Leave a message...",
-];
-const period = 1800;
+const Banner = ({ message }) => {
+  const toRotate = message;
 
-const Banner = () => {
+  const period = 1800;
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");

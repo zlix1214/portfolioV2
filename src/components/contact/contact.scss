@@ -30,12 +30,16 @@
     h1 {
       font-size: 100px;
       line-height: 88px;
+      color: yellow;
+      user-select: none;
+      line-height: 1;
+
       @include mobile {
         font-size: 36px;
       }
     }
     span {
-      font-weight: 300;
+      font-weight: 400;
     }
     .social {
       display: flex;
@@ -88,6 +92,7 @@
         cursor: pointer;
         font-weight: 500;
         color: white;
+        user-select: none;
 
         &:hover {
           background-color: white;

@@ -4,6 +4,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 import { SiMongodb, SiExpress } from "react-icons/si";
 import { FaNodeJs, FaFigma, FaGitAlt } from "react-icons/fa";
 import "./about.scss";
+import { useTranslation } from "react-i18next";
 
 // icon 動畫 variants
 const iconVariants = (duration) => ({
@@ -34,19 +35,23 @@ const skills = [
 const experiences = [
   {
     period: "03.2025 – Present",
+    company: "Allianz Life Insurance Company Ltd",
     title: "IT Helpdesk Assistant",
     description:
       "Provided technical support in a corporate environment, including remote troubleshooting, issue tracking, and assisting with tools like Citrix, Outlook, and Teams.",
   },
   {
-    period: "Since Early 2025",
+    period: "01.2025",
     title: "Web Development (Self-Learning)",
+    company: "Self-Directed",
     description:
       "Exploring modern web technologies through self-directed learning and projects, including full-stack development with React, Node.js, MongoDB, and related tools.",
   },
 ];
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="about-section">
       <div className="about-content">
@@ -77,22 +82,10 @@ const About = () => {
 
           {/* 自我介紹區 */}
           <div className="intro-section">
-            <h3>
-              Hi, I'm Felix, a senior in Information Management at Tamkang
-              University.
-            </h3>
-            <p>
-              I enjoy web development, movies, music, drawing, and dancing. I
-              had no programming experience before college, but writing my first
-              C loop sparked my passion for coding. While exploring different
-              fields, I discovered a strong interest in front-end development
-              during my capstone project.
-            </p>
-            <p>
-              Since then, I've been self-learning and improving my skills.
-              Though new to this field, my enthusiasm drives me to overcome
-              challenges and pursue a career in web development.
-            </p>
+            <h3>{t("about.intro1")}</h3>
+            <p>{t("about.intro2")}</p>
+            <p>{t("about.intro3")}</p>
+            <p>{t("about.intro4")}</p>
           </div>
         </motion.div>
 
@@ -106,7 +99,7 @@ const About = () => {
         >
           {/* 經歷區 */}
           <div className="experience-section">
-            <h3>Experience</h3>
+            <h3>{t("about.exp")}</h3>
             <div className="experience-list">
               {experiences.map((exp, index) => (
                 <motion.div
@@ -117,10 +110,13 @@ const About = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="period">{exp.period}</div>
+                  <div className="period">
+                    <p>{t(`about.exp${index + 1}.period`)}</p>
+                    <p>{t(`about.exp${index + 1}.company`)}</p>
+                  </div>
                   <div className="exp-content">
-                    <h4>{exp.title}</h4>
-                    <p>{exp.description}</p>
+                    <h4>{t(`about.exp${index + 1}.title`)}</h4>
+                    <p>{t(`about.exp${index + 1}.description`)}</p>
                   </div>
                 </motion.div>
               ))}
@@ -129,7 +125,7 @@ const About = () => {
 
           {/* 技能區 */}
           <div className="skills-section">
-            <h3>Skills</h3>
+            <h3>{t("about.skills")}</h3>
             <motion.div
               className="skills-icons"
               initial={{ opacity: 0, y: 50 }}

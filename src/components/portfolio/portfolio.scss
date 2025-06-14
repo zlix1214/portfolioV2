@@ -21,6 +21,7 @@
     .progressBar {
       height: 2px;
       background-color: white;
+      margin-top: 30px;
     }
   }
 
@@ -48,6 +49,7 @@
       .imageContainer {
         flex: 1;
         height: 50%;
+        user-select: none;
 
         @include mobile {
           margin-top: 50px;
@@ -100,6 +102,8 @@
         .buttons {
           display: flex;
           gap: 20px;
+          user-select: none;
+
           @include mobile {
             flex-direction: column;
           }

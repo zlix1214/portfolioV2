@@ -2,6 +2,12 @@
 
 .navbar {
   height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
 
   .wrapper {
     max-width: 1366px;
@@ -10,7 +16,7 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    padding: 0 40px;
+    padding: 0px 40px;
 
     @include mobile {
       justify-content: flex-end;
@@ -19,6 +25,7 @@
 
     img {
       width: 30px;
+      user-select: none;
     }
 
     span {
@@ -32,6 +39,7 @@
     .social {
       display: flex;
       gap: 20px;
+      user-select: none;
 
       img {
         width: 18px;

@@ -3,6 +3,7 @@
     "language": "Switch Language"
   },
   "contact": {
+    "title": "Feel free to contact me!",
     "mail": "Mail",
     "phone": "Phone",
     "success": "Message sent successfully!",
@@ -13,5 +14,58 @@
       "messagePlaceholder": "Message",
       "submit": "Submit"
     }
+  },
+  "hero":{
+    "title": "Felix Zheng",
+    
+    "projectButton": "View My Projects",
+    "contactButton": "Contact Me"
+  },
+  "about":{
+    "intro1":"Hello, I’m Felix,",
+    "intro2":"a senior in Information Management at Tamkang University, Graduating in June 2025. I followed the regular curriculum during college but only found my passion for web development in my senior year through the capstone project.",
+    "intro3":" Since then, I’ve been self-learning and building projects to improve my skills. Though I started late, I’m patient and enjoy challenges, always eager to grow.",
+    "intro4":"I believe it’s never too late to learn. With steady effort, I’m ready to face new challenges and look forward to applying my skills in real-world web development.",
+    "exp": "Experience",
+      "exp1": {
+        "period": "03.2025 – Present",
+        "company": "Allianz Life Insurance Company Ltd",
+        "title": "IT Department / Helpdesk",
+        "description": "Worked as an IT support assistant at an insurance company, helping staff troubleshoot issues with tools like Citrix, O365, and SFTP. Frequently used remote access to resolve software and connectivity problems. Also contributed to issue logging and log analysis, assisting the IT team in improving support workflows and efficiency."
+      },
+       "exp2": {
+        "period": "01.2025",
+        "company": "",
+        "title": "Web Development (Self-Learning)",
+        "description": "Exploring modern web technologies through self-directed learning and projects, including full-stack development with React, Node.js, MongoDB, and related tools."
+      },
+      "skills": "Skills"
+
+  },
+  
+  "projects": {
+    "fiorvo": {
+      "title": "Fiorvo - fashion eCommerce",
+      "desc": "Fiorvo is a fashion e-commerce site built with the MERN stack, featuring a customer storefront and an admin dashboard for managing products, orders, and shipping.",
+      "desc2": ""
+    },
+    "chatApp": {
+      "title": "Real-time Chat App",
+      "desc": "A real-time chat app built with the MERN stack and Socket.IO, featuring multi-theme support and seamless live messaging between users.",
+      "desc2": "⚠️ Note: This app is deployed on Render's free plan, so the server may take around 30 seconds to wake up on the first login due to server cold start. Please be patient during this initial loading time."
+    }
+  },
+   "portfolio":{
+    "demo":"See Demo",
+    "github":"Github"
+  },
+   "nav": {
+    "homepage": "Home Page",
+    "about": "About Me",
+    "portfolio": "Porjects",
+    "contact": "Contact"
   }
+
+
+
 }

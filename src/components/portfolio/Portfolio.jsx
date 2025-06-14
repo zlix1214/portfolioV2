@@ -1,30 +1,32 @@
 import "./portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const items = [
   {
     id: 1,
-    title: "Fiorvo - fashion eCommerce",
+    title: "projects.fiorvo.title",
+    desc: "projects.fiorvo.desc",
+    desc2: "projects.fiorvo.desc2",
     img: "./p1-ecommerce.png",
     demo: "https://fiorvo-frontend.vercel.app/",
     github: "https://github.com/zlix1214/eCommerce?tab=readme-ov-file",
-    desc: "Fiorvo is a fashion e-commerce site built with the MERN stack, featuring a customer storefront and an admin dashboard for managing products, orders, and shipping.",
-    desc2: "",
   },
   {
     id: 2,
-    title: "Real-time Chat App",
+    title: "projects.chatApp.title",
+    desc: "projects.chatApp.desc",
+    desc2: "projects.chatApp.desc2",
     img: "./p2-chat.png",
     demo: "https://realtimechatapp-acaa.onrender.com/login",
     github: "https://github.com/zlix1214/RealTimeChatApp",
-    desc: "A real-time chat app built with the MERN stack and Socket.IO, featuring multi-theme support and seamless live messaging between users.",
-    desc2:
-      "⚠️ Note: This app is deployed on Render's free plan, so the server may take around 30 seconds to wake up on the first login due to server cold start. Please be patient during this initial loading time.",
   },
 ];
 
 const Single = ({ item }) => {
+  const { t } = useTranslation();
+
   const ref = useRef();
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -40,15 +42,15 @@ const Single = ({ item }) => {
             <img src={item.img} alt="" />
           </div>
           <motion.div className="textContainer" style={{ y }}>
-            <h2>{item.title}</h2>
-            <p>{item.desc}</p>
-            {item.desc2 && <p>{item.desc2}</p>}
+            <h2>{t(item.title)}</h2>
+            <p>{t(item.desc)}</p>
+            {item.desc2 && <p>{t(item.desc2)}</p>}
             <div className="buttons">
               <a href={item.demo} target="_blank" rel="noopener noreferrer">
-                See Demo
+                {t("portfolio.demo")}
               </a>
               <a href={item.github} target="_blank" rel="noopener noreferrer">
-                Github repo
+                {t("portfolio.github")}
               </a>
             </div>
           </motion.div>

@@ -39,10 +39,20 @@
         text-align: center;
         padding: 0 15px;
       }
+      .bannerContainer {
+        display: flex;
+        width: fit-content;
+        align-items: center;
+        justify-content: start;
+
+        h1 {
+          color: rgb(3, 217, 255);
+        }
+      }
 
       h2 {
-        font-size: 40px;
-        color: rgb(137, 56, 218);
+        font-size: 50px;
+        color: rgb(246, 246, 246);
         letter-spacing: 10px;
 
         @media (max-width: 1350px) {
@@ -80,6 +90,7 @@
           cursor: pointer;
           font-weight: 300;
           font-size: 16px;
+          user-select: none;
 
           &:hover {
             background-color: white;
@@ -122,6 +133,7 @@
 
       img {
         width: 50px;
+        user-select: none;
 
         @media (max-width: 1350px) {
           width: 40px;
@@ -140,6 +152,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    user-select: none;
 
     @media (max-width: 1350px) {
       height: 50%;
@@ -180,9 +193,10 @@
     font-size: 50vh;
     bottom: -120px;
     white-space: nowrap;
-    color: #ffffff19;
+    color: #ffffff0b;
     width: 50%;
     font-weight: bold;
+    user-select: none;
 
     @media (max-width: 1350px) {
       font-size: 35vh;
