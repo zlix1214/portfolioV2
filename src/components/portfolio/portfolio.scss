@@ -30,27 +30,39 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    min-height: 100dvh;
     overflow-y: visible;
+
+    @supports (-webkit-touch-callout: none) {
+      min-height: -webkit-fill-available;
+    }
 
     .wrapper {
       max-width: 1366px;
-      height: 100%;
+      min-height: 80vh;
       margin: auto;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 50px;
+      position: relative;
+      z-index: 1;
 
       @include mobile {
         flex-direction: column;
+        padding: 20px 0;
+        min-height: auto;
       }
 
       .imageContainer {
         flex: 1;
-        height: 50%;
+        height: 400px;
+        min-height: 300px;
         user-select: none;
         transition: transform 0.3s ease;
+
         &:hover {
           scale: 1.02;
           transform: scale(1.02);
@@ -59,7 +71,9 @@
         @include mobile {
           margin-top: 50px;
           width: 100%;
+          height: 250px;
           max-height: 300px;
+          flex-shrink: 0;
         }
 
         img {
@@ -78,12 +92,15 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
+        min-height: 300px;
 
         @include mobile {
           transform: none !important;
           padding: 10px;
           align-items: center;
           text-align: center;
+          min-height: auto;
+          margin-bottom: 50px;
         }
 
         h2 {
@@ -92,6 +109,7 @@
 
           @include mobile {
             font-size: 36px;
+            line-height: 40px;
           }
         }
 
@@ -111,7 +129,9 @@
 
           @include mobile {
             flex-direction: column;
+            margin-bottom: 20px;
           }
+
           a {
             text-align: center;
             background-color: transparent;
@@ -128,9 +148,44 @@
               color: black;
               scale: 1.1;
             }
+
+            @include mobile {
+              width: 100%;
+              max-width: 250px;
+            }
           }
         }
       }
+    }
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .portfolio {
+    .container {
+      contain: layout style;
+    }
+
+    .wrapper {
+      height: auto !important;
+      min-height: 80vh;
+      min-height: calc(var(--vh, 1vh) * 80);
+    }
+  }
+}
+
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+  .portfolio {
+    .container {
+      min-height: calc(100vh - 40px);
+      min-height: calc(var(--vh, 1vh) * 100 - 40px);
+      padding: 20px 0;
+    }
+
+    .wrapper {
+      min-height: auto;
+      height: auto;
+      padding-bottom: 60px;
     }
   }
 }
