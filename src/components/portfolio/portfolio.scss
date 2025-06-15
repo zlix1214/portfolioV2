@@ -44,6 +44,8 @@
 
       @include mobile {
         flex-direction: column;
+        gap: 80px; // 增加手機版的間距
+        padding: 40px 0; // 增加上下內距
       }
 
       .imageContainer {
@@ -57,7 +59,7 @@
         }
 
         @include mobile {
-          margin-top: 50px;
+          margin-top: 20px; // 減少頂部間距，因為wrapper已經有padding
           width: 100%;
           max-height: 300px;
         }
@@ -84,6 +86,7 @@
           padding: 10px;
           align-items: center;
           text-align: center;
+          margin-bottom: 40px; // 增加底部間距
         }
 
         h2 {
@@ -111,6 +114,7 @@
 
           @include mobile {
             flex-direction: column;
+            gap: 15px; // 增加按鈕之間的間距
           }
           a {
             text-align: center;
@@ -127,6 +131,11 @@
               box-shadow: 0 10px 25px rgba(255, 255, 255, 0.293);
               color: black;
               scale: 1.1;
+            }
+
+            @include mobile {
+              width: 100%;
+              max-width: 250px; // 限制按鈕最大寬度
             }
           }
         }
