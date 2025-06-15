@@ -54,6 +54,11 @@
       "title": "Real-time Chat App",
       "desc": "A real-time chat app built with the MERN stack and Socket.IO, featuring multi-theme support and seamless live messaging between users.",
       "desc2": "⚠️ Note: This app is deployed on Render's free plan, so the server may take around 30 seconds to wake up on the first login due to server cold start. Please be patient during this initial loading time."
+    },
+    "coming":{
+      "title": "Coming Soon",
+      "desc": "More projects are in development, stay tuned!",
+      "desc2": ""
     }
   },
    "portfolio":{
