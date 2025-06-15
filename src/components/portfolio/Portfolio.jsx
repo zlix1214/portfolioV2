@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import "./Portfolio.scss";
+import "./portfolio.scss";
 import { useTranslation } from "react-i18next";
 
 const t = (key) => {
