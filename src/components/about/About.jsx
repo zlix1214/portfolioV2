@@ -37,7 +37,7 @@ const experiences = [
       "Provided technical support in a corporate environment, including remote troubleshooting, issue tracking, and assisting with tools like Citrix, Outlook, and Teams.",
   },
   {
-    period: "01.2025",
+    period: "",
     title: "Web Development (Self-Learning)",
     company: "Self-Directed",
     description:
